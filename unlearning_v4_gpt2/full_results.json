@@ -1,0 +1,101 @@
+{
+  "model": "gpt2-medium",
+  "model_type": "GPT-2 Medium float32 full fine-tune (no quantisation)",
+  "dataset": "MovieLens-1M",
+  "forget_n": 100,
+  "retain_n": 100,
+  "probe_layers": [
+    2,
+    4,
+    6,
+    8,
+    10,
+    12,
+    14,
+    16,
+    18,
+    20,
+    22,
+    24
+  ],
+  "num_genres": 6,
+  "chance_baseline": 0.1667,
+  "unlearning_method": "NPO only (GA excluded \u2014 catastrophic collapse)",
+  "perplexity": {
+    "base_forget": 7.12,
+    "npo_forget": 7.5,
+    "base_retain": 7.37,
+    "npo_retain": 7.72,
+    "npo_forget_pct_change": 5.21,
+    "npo_retain_pct_change": 4.8
+  },
+  "probe_accuracy_deep_layer": {
+    "layer": 24,
+    "base": 0.4,
+    "npo": 0.4
+  },
+  "cosine_sim_deep_layer": {
+    "layer": 24,
+    "npo": 1.0
+  },
+  "h1_verdict": "probe persists",
+  "h3_npo_verdict": "SUPPRESSION",
+  "all_probe_acc": {
+    "base": {
+      "2": 0.38,
+      "4": 0.44,
+      "6": 0.36,
+      "8": 0.38,
+      "10": 0.38,
+      "12": 0.41,
+      "14": 0.42,
+      "16": 0.45,
+      "18": 0.45,
+      "20": 0.47,
+      "22": 0.35,
+      "24": 0.4
+    },
+    "npo": {
+      "2": 0.38,
+      "4": 0.43,
+      "6": 0.36,
+      "8": 0.38,
+      "10": 0.38,
+      "12": 0.41,
+      "14": 0.42,
+      "16": 0.44,
+      "18": 0.45,
+      "20": 0.47,
+      "22": 0.36,
+      "24": 0.4
+    },
+    "retain": {
+      "2": 0.45,
+      "4": 0.52,
+      "6": 0.49,
+      "8": 0.42,
+      "10": 0.42,
+      "12": 0.44,
+      "14": 0.41,
+      "16": 0.43,
+      "18": 0.44,
+      "20": 0.44,
+      "22": 0.44,
+      "24": 0.49
+    }
+  },
+  "all_cosim_npo": {
+    "2": 1.0,
+    "4": 1.0,
+    "6": 1.0,
+    "8": 1.0,
+    "10": 1.0,
+    "12": 1.0,
+    "14": 1.0,
+    "16": 1.0,
+    "18": 1.0,
+    "20": 1.0,
+    "22": 1.0,
+    "24": 1.0
+  }
+}
